@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two in array with while loop</title>
+</head>
+<body>
+
+
+    <script>
+        // let arr1 = [3,7,12,34,56,90];
+        // let arr2 = [4,9,25,45];
+        // let arr3 = [];
+        // let i = 0;
+        // let j = 0;
+        // let k = 0;
+        // while(i<arr1.length && j<arr2.length){
+        //     if(arr1[i]<=arr2[j]){       // checks first element of both arrays 
+        //         arr3[k] = arr1[i];     // add arr1 elt to arr3
+        //         i++;                   // increment value of i by 1 on each iteration
+        //     }
+        //     else{
+        //         arr3[k] = arr2[j]      // add arr2 elt to arr3
+        //         j++;                   // increment value of i by 1 on each iteration
+        //     }
+        //     k++                        
+        // }
+
+        // // add last 2 elt of arr1 with while loop
+        // while(i<arr1.length){
+        //     arr3[k] = arr1[i]          // add arr1 remaining values to arr3
+        //     i++                        // increment i by 1
+        //     k++                        // increment k by 1
+        // }
+
+        // // add last 2 elet of arr1 with for loop
+        // // or(i;i<arr1.length;i++){
+        // //     arr3[k] = arr1[i]
+        // //     k++
+        // // }
+        // console.log(arr3)
+
+        let arr1 = [2,4,5,6,7,8]
+        let arr2 = [2,4,5,6]
+        let arr3 = []
+        let i = 0;
+        let j = 0;
+        let k = 0;
+
+        while(i<arr1.length && j<arr2.length){
+            if(arr1[i]<=arr2[j]){
+                arr3[k] = arr1[i]
+                i++
+            }
+            else{
+                arr3[k] = arr2[j]
+                j++
+            }
+            k++
+        }
+        for(i;i<arr1.length;i++){
+            arr3[k] = arr1[i]
+            k++
+        }
+        console.log(arr3)
+    </script>
+</body>
+</html>
