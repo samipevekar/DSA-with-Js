@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asymptotic Analysis in Data Structures</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #ccc;
+            margin: 10px 0;
+        }
+        .example code {
+            font-family: monospace;
+            background-color: #eee;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Asymptotic Analysis in Data Structures</h1>
+        <p>Asymptotic analysis is a method to describe the efficiency of algorithms as the input size grows. It helps in understanding the behavior of an algorithm in terms of time complexity (how the runtime of an algorithm grows with the input size) and space complexity (how the memory usage grows with the input size).</p>
+        
+        <h2>Key Concepts of Asymptotic Analysis:</h2>
+        <ul>
+            <li><strong>Big O Notation (O):</strong> Represents the upper bound of the runtime of an algorithm. Describes the worst-case scenario.
+                <div class="example"><code>Example: O(n^2)</code> means the algorithm's runtime grows at most as fast as the square of the input size.</div>
+            </li>
+            <li><strong>Big Omega Notation (Ω):</strong> Represents the lower bound of the runtime. Describes the best-case scenario.
+                <div class="example"><code>Example: Ω(n)</code> means the algorithm's runtime grows at least as fast as the input size.</div>
+            </li>
+            <li><strong>Big Theta Notation (Θ):</strong> Represents both the upper and lower bounds of the runtime. Describes the average-case scenario.
+                <div class="example"><code>Example: Θ(n log n)</code> means the algorithm's runtime grows proportionally to n log n.</div>
+            </li> 
+        </ul>
+
+        <h2>Practical Application:</h2>
+        <ul>
+            <li><strong>Comparing Algorithms:</strong> Asymptotic analysis allows you to compare the efficiency of different algorithms independently of hardware or other implementation details.</li>
+            <li><strong>Scalability:</strong> Understanding how algorithms scale with input size helps in choosing the right algorithm for large datasets.</li>
+            <li><strong>Optimization:</strong> It helps in identifying bottlenecks and areas where improvements are necessary.</li>
+        </ul>
+
+        <h2>Examples:</h2>
+        <ul>
+            <li><strong>Linear Search:</strong>
+                <div class="example">Time Complexity: <code>O(n)</code> in the worst case.<br>Best case: <code>Ω(1)</code> (if the element is found at the first position).</div>
+            </li>
+            <li><strong>Binary Search:</strong>
+                <div class="example">Time Complexity: <code>O(log n)</code> in the worst case.<br>Best case: <code>Ω(1)</code> (if the element is found at the middle position).</div>
+            </li>
+            <li><strong>Merge Sort:</strong>
+                <div class="example">Time Complexity: <code>Θ(n log n)</code> in all cases (best, average, worst).<br>Space Complexity: <code>O(n)</code>.</div>
+            </li>
+        </ul>
+
+        <h2>How to Calculate Time Complexity:</h2>
+        <p>formular : f(n) = 5n<sup>2</sup> + 6n + 12</p>
+        <p>To calculate the time complexity of an algorithm, follow these steps:</p>
+        <ul>
+            <li>Identify the basic operations in the algorithm, such as comparisons, assignments, or arithmetic operations.</li>
+            <li>Count the number of times each basic operation is executed with respect to the input size (n).</li>
+            <li>Focus on the most significant terms that grow the fastest as the input size increases and ignore lower-order terms and constant factors.</li>
+        </ul>
+        <p>Consider this example:</p>
+        <div class="example">
+            <code>
+                function exampleFunction(arr) {<br>
+                &nbsp;&nbsp;let sum = 0; // O(1)<br>
+                &nbsp;&nbsp;for (let i = 0; i < arr.length; i++) { // O(n)<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;sum += arr[i]; // O(1)<br>
+                &nbsp;&nbsp;}<br>
+                &nbsp;&nbsp;return sum; // O(1)<br>
+                }
+            </code>
+        </div>
+        <p>In this example, the time complexity is calculated as follows:</p>
+        <ul>
+            <li>The initialization of <code>sum</code> is a single operation: <code>O(1)</code>.</li>
+            <li>The loop runs <code>n</code> times, where <code>n</code> is the length of the array: <code>O(n)</code>.</li>
+            <li>Inside the loop, adding each element to <code>sum</code> is a single operation: <code>O(1)</code>.</li>
+            <li>The return statement is a single operation: <code>O(1)</code>.</li>
+        </ul>
+        <p>The total time complexity is <code>O(1) + O(n) + O(1) + O(1) = O(n)</code>. The dominant term is <code>O(n)</code>, so the time complexity of the function is <code>O(n)</code>.</p>
+    </div>
+</body>
+</html>
