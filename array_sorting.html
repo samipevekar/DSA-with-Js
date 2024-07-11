@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let data = [40,30,12,25,2392,1,4,24,100342,24,4,2,23,4,2,]
+
+        // For Ascending order
+
+        for(let i=0;i<data.length;i++){
+            for(let j=0;j<data.length;j++){    // This loop will execute data.length * data.length
+                if(data[j]>data[j+1]){      // checks if first elt is > next  
+                    let temp = data[j]      
+                    data[j] = data[j+1]
+                    data[j+1] = temp        // swap 1st and 2nd
+                }
+            }
+        }
+
+        // For Descending order
+
+        // for(let i=0;i<data.length;i++){
+        //     for(let j=0;j<data.length;j++){
+        //         if(data[j]<data[j+1]){
+        //             let temp = data[j]
+        //             data[j] = data[j+1]
+        //             data[j+1] = temp
+        //         }
+        //     }
+        // }
+
+        console.log(data)
+
+
+    </script>
+</body>
+</html>
