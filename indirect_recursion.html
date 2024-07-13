@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let money = 100;
+      let totalApple = 0;
+
+      function buyApple(x) {
+        // console.log(x)
+        if (x > 0) {
+          console.log("i have ", x, "rs", totalApple);
+          buyMore(x);
+        } else {
+          console.log("You dont have money to buy apple", totalApple);
+        }
+      }
+
+      function buyMore(x) {
+        totalApple++;
+        buyApple(x - 10);
+      }
+
+      buyApple(money);
+    </script>
+  </body>
+</html>
