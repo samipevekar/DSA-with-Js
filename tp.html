@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse array with recursion</title>
+</head>
+<body>
+    <script>
+
+        let data = [4,35,2,1,4,34,23,5]
+        
+         
+        function reverse(data,start,end){
+            if(start <= end){                       // checks if start and end are equal or start is greater     
+                let temp = data[start]      
+                data[start] = data[end]
+                data[end] = temp                    // swap start and end
+                
+                reverse(data,start+1,end-1)         // this will execute until condition is true
+            }
+           
+        }
+
+        reverse(data,0,data.length-1)               // parameters are array,its first value, its last value
+        console.log(data)
+
+
+    </script>
+</body>
+</html>
