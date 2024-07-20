@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>stack in js</h1>
+    <input type="text" name="" id="newEl" placeholder="enter stack element" />
+    <button onclick="push()">add element to stack</button>
+    <button onclick="pop()">remove element from stack</button>
+    <button onclick="display()">show stack</button>
+
+
+    <script>
+        let data = [];
+        let size = data.length;
+        let max = 6;
+
+        
+        function push(){
+            let val = document.getElementById('newEl').value
+            if(size>=max){
+                alert("stack is full " + val)
+            }else{
+                data[size] = val
+                size++
+
+            }
+
+            document.getElementById('newEl').value = ""
+        }
+        
+        function pop(){
+            if(size>0){
+                size--
+                data.length = size
+            }else{
+                alert("stack is already empty")
+            }
+        }
+
+        function display(){
+            for(let i=0;i<size;i++){
+                console.log(data[i])
+            }
+            console.log(data)
+        }
+    </script>
+  </body>
+</html>
