@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string reverse using stack</title>
+</head>
+<body>
+    <script>
+       let data = []
+       let size = data.length
+
+       function push(newVal){
+            data[size] = newVal
+            size++
+
+       }
+
+       function pop(){
+        let lastRemovedItem = data[size-1]         // assign deleted element to lastRemovedItem
+        size--                                     // remove last element
+        data.length = size                         // update length of stack
+        return lastRemovedItem                     // return removed element
+       }
+       
+
+       function reverseStr(str){
+        for(let i=0;i<str.length;i++){             // this loop asign all value of stack to data array
+            push(str[i])
+        }
+        for(let i=0;i<str.length;i++){             // this loop assign last removed element to str array
+            str[i] = pop()
+        }
+        
+       }
+
+       let str = "sami"
+       str = str.split('')                         // create string array
+       reverseStr(str)
+       console.log(str.join(""))
+       
+
+       console.log(data)
+
+
+    </script>
+</body>
+</html>
