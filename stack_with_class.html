@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stack with class</title>
+</head>
+<body>
+    <script>
+        class Stack{
+            constructor(val){                 // when we create instance of class then firstly constructor will call
+                this.item = [];               // we need to add 'this' only for the properties of class
+                this.size = this.item.length
+                this.max = 5
+            }
+            push(val){                        // it push element to the stack
+                if(this.size>=this.max){
+                    alert('stack is full')
+                }else{
+                    this.item[this.size] = val;
+                    this.size++
+                }
+            }
+            pop(){                            // it delete element from stack
+                if(this.size<0){
+                    alert("array is already empty")
+                }else{
+                    this.size--
+                    this.item.length = this.size
+                }
+            }
+            display(){                        // it display all element present in the stack
+                console.log(this.item)
+            }
+        }
+
+        st = new Stack()                      // this is instance of class 
+        st.push(20)                           // to call function we need to use instance of class
+        st.push(20)
+        st.push(20)
+        st.push(20)
+        st.push(20)
+        st.display()
+        st.pop()
+        st.pop()
+        st.pop()
+        st.pop()
+        st.display()
+        
+    </script>
+</body>
+</html>
