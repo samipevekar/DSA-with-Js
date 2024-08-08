@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Linear search with js</h1>
+    <input type="text" name="" id="element">
+    <button onclick="Search()">serach</button>
+
+    <script>
+        
+        function Search(){
+            let arr = [1,30,22,45,23,12,100]
+            let element = document.getElementById("element").value;
+
+            for(let i=0;i<arr.length;i++){
+                if(arr[i] == element){
+                    console.log(i)
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>
