@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [3,5,9,12,88,111,117,119,200]
+        let element = 119;
+        let start = 0;
+        let end = arr.length-1;
+        let position = undefined;
+
+        while(start<=end){
+            let mid = Math.floor((start+end)/2)
+
+            if(arr[mid] === element){
+                position = mid
+                break
+            }
+            else if(arr[mid]<element){
+                start = mid+1
+            }else{
+                end = mid-1
+            }
+        }
+
+        console.log(position)
+    </script>
+</body>
+</html>
