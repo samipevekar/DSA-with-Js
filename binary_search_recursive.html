@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [1, 5, 10, 45, 67, 99];
+      let start = 0;
+      let end = arr.length - 1;
+      let target = 10;
+
+      function rbs(arr, start, end) {
+
+        let mid = Math.floor((start + end) / 2);
+
+          if (arr[mid] === target) {
+            return mid;
+          } else if (arr[mid] < target) {
+            return rbs(arr, mid + 1, end);
+          } else {
+            return rbs(arr, start, mid - 1);
+          }
+      }
+
+      let position = rbs(arr, start, end);
+
+      console.log(position);
+    </script>
+  </body>
+</html>
