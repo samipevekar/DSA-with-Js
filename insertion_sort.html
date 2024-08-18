@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [11,9,10,1,4,3,2]
+
+        
+        
+        function insertion(arr){
+            let i,j,current;
+
+            for(i=1;i<arr.length;i++){
+                current = arr[i]
+                j=i-1
+
+                while(j>=0 && arr[j]>current){
+                    arr[j+1] = arr[j]
+                    j--
+                }
+
+                arr[j+1] = current
+            }
+        }
+
+        insertion(arr)
+
+        console.log(arr)
+    </script>
+</body>
+</html>
