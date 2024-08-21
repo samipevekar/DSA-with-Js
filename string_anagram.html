@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function AnagramCheck(str1,str2){
+            let ObjStr1 = {}
+            if(str1.length !== str2.length){
+                return false
+            }
+
+            for(let i=0;i<str1.length;i++){
+                ObjStr1[str1[i]] = (ObjStr1[str1[i]] || 0) + 1 
+            }
+
+            for(let i=0;i<str2.length;i++){
+                if(!ObjStr1[str2[i]]){
+                    return false
+                }
+
+                ObjStr1[str2[i]]--
+            }
+
+            return true
+        }
+
+        console.log(AnagramCheck("abb","aab"))
+
+    </script>
+</body>
+</html>
