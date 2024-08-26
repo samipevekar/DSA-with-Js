@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let map = new Map([
+            ['name','sami'],
+            [undefined,2]
+        ])
+
+        map.set('sal',120000)  // add more pair to map
+
+        map.delete('name') // delete key value pair where key is name
+        
+        map.has('name') // return true
+        map.get('name')  // return value of name key
+
+
+        for(x of map){
+            // console.log(x[0])    // print all keys
+            // console.log(x[1])    // print all values
+        }
+
+        map.forEach((val,key)=>{
+            // console.log(val)
+            console.log(key)
+        })
+
+        // console.log(map)
+
+    </script>
+</body>
+</html>
