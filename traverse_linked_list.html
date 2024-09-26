@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class LinkList{
+            constructor(node){
+                this.head = {
+                    value: node,
+                    next: null
+                }
+
+                this.tail = this.head
+                this.size = 1
+            }
+
+            appendNode(node){
+                let newNode = {
+                    value: node,
+                    next: null
+                }
+
+                this.tail.next = newNode
+                this.tail = newNode
+
+                this.size++
+            }
+
+            traverse(){
+                let counter = 0;
+                let node = this.head
+                while(counter<this.size){
+                    console.log(counter)
+                    console.log(node)
+                    node = node.next
+                    counter++
+                }
+            }
+
+        }
+
+
+        let list = new LinkList(200)
+        list.appendNode(300)
+        list.appendNode(400)
+        list.appendNode(500)
+        list.appendNode(600)
+        list.appendNode(700)
+
+        list.traverse()
+        console.log(list)
+    </script>
+</body>
+</html>
