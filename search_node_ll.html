@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class LinkList {
+        constructor(node) {
+          this.head = {
+            value: node,
+            next: null,
+          };
+
+          this.tail = this.head;
+          this.size = 1;
+        }
+
+        appendNode(node) {
+          let newNode = {
+            value: node,
+            next: null,
+          };
+
+          this.tail.next = newNode;
+          this.tail = newNode;
+
+          this.size++;
+        }
+
+        traverse() {
+          let counter = 0;
+          let node = this.head;
+          while (counter < this.size) {
+            // console.log(counter)
+            // console.log(node)
+            node = node.next;
+            counter++;
+          }
+        }
+
+        deleteNode(index) {
+          let counter = 0;
+          let lead = this.head;
+
+          console.log("head", this.head);
+          console.log(lead);
+
+          if (index === 0) {
+            this.head = this.head.next;
+          } else {
+            while (counter < index - 1) {
+              lead = lead.next;
+              counter++;
+              console.log(lead);
+            }
+            let nextNode = lead.next.next;
+            lead.next = nextNode;
+            console.log(lead);
+          }
+          this.size--;
+        }
+
+        searchNode(value){
+            let counter = 0;
+            let node = this.head
+
+            while(node !== null){
+                counter++
+                if(node.value === value){
+                    return node
+                }
+                node = node.next
+            }
+            return null
+        }
+
+        
+
+
+        
+      }
+
+      let list = new LinkList(200);
+      list.appendNode(300);
+      list.appendNode(400);
+      list.appendNode(500);
+      list.appendNode(600);
+      list.appendNode(700);
+
+    //   list.insertNode(2, 10000);
+
+      console.log(list.searchNode(800))
+
+      console.log(list);
+    </script>
+  </body>
+</html>
